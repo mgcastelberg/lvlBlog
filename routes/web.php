@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Panel\PostController;
+use App\Http\Controllers\Panel\WelcomeController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -14,7 +17,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect()->route('login');
 });
 
 Route::middleware([
@@ -22,7 +25,6 @@ Route::middleware([
     config('jetstream.auth_session'),
     'verified'
 ])->group(function () {
-    Route::get('/dashboard', function () {
-        return view('panel.dashboard');
-    })->name('dashboard');
+    Route::get('/dashboard', WelcomeController::class)->name('dashboard');
+    Route::resource('/post', PostController::class)->names('panel.post')->only('index','show');
 });

@@ -10,36 +10,33 @@
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
         <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
+        {{-- Font Awesome --}}
+        <script src="https://kit.fontawesome.com/08cc16a3b6.js" crossorigin="anonymous"></script>
 
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
 
         <!-- Styles -->
         @livewireStyles
+
+        @stack('css')
     </head>
-    <body class="font-sans antialiased">
+    <body class="font-sans antialiased text-gray-800 dark:text-gray-300">
         <x-banner />
+            @include('layouts.navs.navigation-admin')
 
-        <div class="min-h-screen bg-gray-100 dark:bg-gray-900">
-            @livewire('navigation-admin')
+            {{-- <div class="col-span-6">
+                <x-jet-label>Título</x-jet-label>
+                <x-jet-input type="text" class="w-full mt-1" />
+                <x-jet-input-error for="createForm.title" />
+            </div> --}}
 
-            <!-- Page Heading -->
-            @if (isset($header))
-                <header class="bg-white shadow dark:bg-gray-800">
-                    <div class="px-4 py-6 mx-auto max-w-7xl sm:px-6 lg:px-8">
-                        {{ $header }}
-                    </div>
-                </header>
-            @endif
-
-            <!-- Page Content -->
-            <main>
-                {{ $slot }}
-            </main>
         </div>
 
         @stack('modals')
 
         @livewireScripts
+        @stack('js')
     </body>
+
 </html>

@@ -11,9 +11,9 @@
 
     @include('layouts.navs.sidebar-panel')
 
-    <div class="min-h-screen bg-gray-100 dark:bg-gray-900">
+    <div class="w-full min-h-screen bg-gray-100 dark:bg-gray-900">
         <div class="flex-1">
-            <nav  class="sticky top-0 bg-white border-b border-gray-100 dark:bg-gray-800 dark:border-gray-700">
+            <nav  class="sticky top-0 z-50 bg-white border-b border-gray-100 dark:bg-gray-800 dark:border-gray-700">
                 <!-- Primary Navigation Menu -->
                 <div class="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
                     <div class="flex justify-between h-16">
@@ -78,6 +78,11 @@
                                             <x-dropdown-link href="{{ route('profile.show') }}">
                                                 {{ __('Profile') }}
                                             </x-dropdown-link>
+
+                                            <x-dropdown-link href="{{ route('admin.posts.index') }}">
+                                                {{ __('Panel Posts') }}
+                                            </x-dropdown-link>
+
 
                                             <div class="border-t border-gray-200 dark:border-gray-600"></div>
 
@@ -222,4 +227,4 @@
 
             </div>
         </div>
-    </div>
+        </div>

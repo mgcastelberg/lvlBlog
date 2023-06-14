@@ -1,0 +1,36 @@
+/* The "copy" box container */
+.code-badge {
+    background: #555 !important;
+    padding: 8px !important;
+    opacity: 0.5 !important;
+    transition: opacity linear 0.5s !important;
+}
+
+/* The "copy" button */
+.code-badge-copy-icon {
+    font-size: 1.3em !important;
+}
+
+/* The "copy" button, after clicked */
+.text-success {
+    color: #b6ff00;
+}
+
+/* The text in the container */
+.code-badge-language {
+    margin-right: 10px;
+    font-weight: 700 !important;
+    color: #ffafaf !important;
+    transition: color linear 0.5s !important;
+}
+
+/* The "copy" box container, at mouse hover */
+.code-badge:hover {
+    opacity: 1 !important;
+    background: #4f4f4f !important;
+}
+
+/* The text in the container, at mouse hover */
+.code-badge:hover .code-badge-language {
+    color: #ff4343 !important;
+}

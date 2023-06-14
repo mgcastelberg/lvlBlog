@@ -10,25 +10,32 @@
         {{-- Fonts --}}
         <link rel="preconnect" href="https://fonts.bunny.net">
         <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
-        {{-- Font Awesome --}}
-        <script src="https://kit.fontawesome.com/08cc16a3b6.js" crossorigin="anonymous"></script>
+               {{-- Font Awesome --}}
+               <script src="https://kit.fontawesome.com/08cc16a3b6.js" crossorigin="anonymous"></script>
 
-        <!-- Scripts -->
-        @vite(['resources/css/app.css', 'resources/js/app.js'])
+               <!-- Scripts -->
+               @vite(['resources/css/app.css', 'resources/js/app.js'])
 
-        <!-- Styles -->
-        @livewireStyles
-    </head>
-    <body class="font-sans antialiased bg-gray-50">
+               <!-- Styles -->
+               @livewireStyles
 
-        <div class="min-h-screen bg-gray-100 dark:bg-gray-900">
+               @stack('css')
+           </head>
+           <body class="font-sans antialiased text-gray-800 dark:text-gray-300">
+               <x-banner />
+                   @include('layouts.navs.navigation-panel')
 
-            @include('layouts.navs.navigation-panel')
+                   {{-- <div class="col-span-6">
+                       <x-jet-label>Título</x-jet-label>
+                       <x-jet-input type="text" class="w-full mt-1" />
+                       <x-jet-input-error for="createForm.title" />
+                   </div> --}}
 
-        </div>
+               </div>
 
-        @stack('modals')
+               @stack('modals')
 
-        @livewireScripts
-    </body>
+               @livewireScripts
+               @stack('js')
+           </body>
 </html>
